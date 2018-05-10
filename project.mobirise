@@ -34,7 +34,7 @@
     },
     "path": "@PROJECT_PATH@",
     "versionFirst": "4.7.1",
-    "uniqCompNum": 54,
+    "uniqCompNum": 55,
     "versionPublish": "4.7.1",
     "screenshot": "screenshot.png"
   },
@@ -1745,81 +1745,113 @@
             "& when (@bg-type = 'image')": {
               "background-image": "url(@bg-value)"
             },
-            ".container-fluid": {
-              "padding": "0 3rem"
+            ".mbr-section-subtitle": {
+              "color": "#000000"
             },
-            ".media-container-column": {
-              "padding": "0 2rem"
-            },
-            ".mbr-section-title": {
-              "display": "inline-block",
-              "position": "relative"
-            },
-            "@media (max-width: 767px)": {
-              ".container-fluid": {
-                "padding": "0 1rem"
-              }
-            }
-          },
-          "_name": "content7",
-          "_customHTML": "<section group=\"Content\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!--Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"2\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Secondary Title\" name=\"showSubtitle\">\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"../_images/img/04.jpg\">\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\" selected>\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" checked condition=\"bg.type !== 'color'\">\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#efefef\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container-fluid\">\n        <div class=\"row justify-content-center\">\n            <div class=\"col-12 col-lg-6 col-md-8 align-center\" mbr-if=\"showTitle || showSubtitle\">\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-fonts-style mbr-light pb-3\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle\">\n                    Secondary Title\n                </h3>\n                <h2 mbr-if=\"showTitle\" class=\"mbr-section-title align-center mbr-fonts-style mbr-bold\" mbr-theme-style=\"display-2\" data-app-selector=\".mbr-section-title\">\n                    Futura18 Sponsors</h2>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "qRtATvYNcJ",
-          "_anchor": "content7-1a",
-          "_protectedParams": [],
-          "_global": false,
-          "_once": false,
-          "_params": {}
-        },
-        {
-          "_styles": {
-            "padding-top": "(@paddingTop * 15px)",
-            "padding-bottom": "(@paddingBottom * 15px)",
-            "& when (@bg-type = 'color')": {
-              "background-color": "@bg-value"
-            },
-            "& when (@bg-type = 'image')": {
-              "background-image": "url(@bg-value)"
-            },
-            ".container-fluid": {
-              "padding": "0 3rem"
+            ".mbr-text": {
+              "color": "#767676"
             },
             ".card": {
-              ".card-wrapper": {
-                "height": "1%",
-                ".card-img": {
-                  "overflow": "hidden",
-                  "margin-bottom": "1rem",
-                  "z-index": "1",
-                  "img": {
-                    "transition": "all .5s"
+              "position": "relative",
+              "justify-content": "center"
+            },
+            ".media-container-row": {
+              "align-items": "flex-start"
+            },
+            ".card-wrapper": {
+              "box-shadow": "0px 0px 0px 0px rgba(0, 0, 0, 0)",
+              "transition": "box-shadow 0.3s",
+              ".card-img": {
+                "display": "block",
+                "position": "relative",
+                "overflow": "hidden",
+                "border-bottom-right-radius": "0",
+                "border-bottom-left-radius": "0",
+                ".mbr-overlay": {
+                  "background": "@cardOverlayColor1",
+                  "& when (@cardGradient)": {
+                    "background": "linear-gradient(135deg, @cardOverlayColor1, @cardOverlayColor2)"
                   },
-                  "&:hover img": {
-                    "-ms-transform": "scale3d(1.05, 1.05, 1.05)",
-                    "-webkit-transform": "scale3d(1.05, 1.05, 1.05)",
-                    "-o-transform": "scale3d(1.05, 1.05, 1.05)",
-                    "-moz-transform": "scale3d(1.05, 1.05, 1.05)",
-                    "transform": "scale3d(1.05, 1.05, 1.05)",
-                    "transition": "all .5s"
+                  "display": "block",
+                  "opacity": "@cardOverlayOpacity",
+                  "transition": "all .3s",
+                  "border-bottom-left-radius": "50%"
+                },
+                ".mbr-section-btn": {
+                  "text-align": "center",
+                  "position": "absolute",
+                  "top": "50%",
+                  "transform": "translateY(-50%)",
+                  "width": "100%",
+                  "transition": "opacity .3s",
+                  "margin": "auto"
+                }
+              },
+              ".card-box": {
+                "background-color": "@bgCard",
+                "padding": "0 2rem 2rem 2rem",
+                "border-bottom-left-radius": "0",
+                "border-bottom-right-radius": "0",
+                "h4": {
+                  "font-weight": "500",
+                  "margin-bottom": "0",
+                  "padding-top": "2rem"
+                },
+                "p": {
+                  "margin-bottom": "0",
+                  "padding-top": "1.5rem",
+                  "& when not (@showCardTitle)": {
+                    "padding-top": "2rem"
                   }
+                }
+              },
+              "&:hover": {
+                "box-shadow": "0px 0px 30px 0px rgba(0, 0, 0, 0.05)",
+                "transition": "box-shadow 0.3s"
+              }
+            },
+            ".popup-btn": {
+              ".mbr-overlay": {
+                "opacity": "0",
+                "height": "0",
+                "bottom": "0",
+                "top": "auto",
+                "border-bottom-left-radius": "0 !important"
+              },
+              ".mbr-section-btn": {
+                "opacity": "0"
+              },
+              "&:hover": {
+                ".mbr-overlay": {
+                  "opacity": "@cardOverlayOpacity",
+                  "height": "100%"
+                },
+                ".mbr-section-btn": {
+                  "opacity": "1"
                 }
               }
             },
-            ".text-row": {
-              "align-self": "center"
+            ".underline": {
+              "padding-top": ".5rem",
+              "padding-bottom": ".5rem",
+              ".line": {
+                "width": "5rem",
+                "height": "3px",
+                "background": "linear-gradient(90deg, @primaryColor, @secondaryColor)",
+                "display": "inline-block"
+              }
             },
-            "@media (max-width: 767px)": {
-              ".container-fluid": {
-                "padding": "0 1rem"
-              },
-              ".text-row": {
-                "padding-bottom": "1rem"
+            "@media (min-width: 768px)": {
+              ".mbr-section-title,.underline,.mbr-section-subtitle": {
+                "padding-left": "3rem",
+                "padding-right": "3rem"
               }
             }
           },
-          "_name": "features13",
-          "_customHTML": "<section class=\"mbr-section features13\" group=\"Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"8\" step=\"1\" value=\"7\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"8\" step=\"1\" value=\"5\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\">\n        <input type=\"checkbox\" title=\"Show Buttons\" name=\"showButtons\">\n        <input type=\"checkbox\" title=\"Show Cards Buttons\" name=\"showCardsButtons\">\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <select title=\"Cards\" name=\"cardsAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n        </select>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/logomark-blue-761x761.png\" parallax selected> \n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type !== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n\n    <div class=\"container-fluid\">\n        <div class=\"row\">\n            <div class=\"col-12 text-row\" mbr-class=\"{'col-md-10': cardsAmount == 3,\n                             'col-md-6': cardsAmount != 3}\" mbr-if=\"showTitle || showSubtitle || showButtons\">\n                <h2 mbr-if=\"showTitle\" class=\"align-center pb-3 mbr-fonts-style\" mbr-theme-style=\"display-2\">\n                    Futura18 Sponsors</h2>\n                <h3 mbr-if=\"showSubtitle\" class=\"mbr-section-subtitle align-center mbr-light pb-3 mbr-fonts-style\" mbr-theme-style=\"display-5\" data-app-selector=\".mbr-section-subtitle, .title-btn\">\n                    Here is a list and links to all of our 2018 sponsors.<br><br><br></h3>\n                <div class=\"mbr-section-btn title-btn align-center\" mbr-class=\"{'pt-3':!showSubtitle,\n                                 'pb-3': cardsAmount == 3}\" mbr-if=\"showButtons\" mbr-buttons mbr-theme-style=\"display-4\" data-toolbar=\"-mbrBtnAdd,-mbrBtnMove\">\n                    <a class=\"btn btn-black-outline\" href=\"https://mobirise.com\">VIEW ALL</a>\n                </div>\n            </div>\n            <div class=\"card px-3 py-4 col-12 col-md-6 col-lg-4\" mbr-class=\"{'col-xl-3': showTitle || showSubtitle || showButtons}\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <img src=\"@PROJECT_PATH@/assets/images/mbr-1160x773.jpg\" alt=\"Mobirise\" title>\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardsButtons\">\n                        <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .card-btn\">SEDC<br>For nearly four decades, SEDC has been a leader in the development of innovative utility software solutions. We’re committed to providing our users with CIS/Billing, Accounting, Engineering and Operations applications configured to meet their needs. Our all-in-one solutions are cost-effective and customizable – and backed by our team of expert designers and dedicated support staff that is second to none in terms of developing cutting-edge technologies and building lasting relationships.<br><br><br><br></p>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn card-btn align-center\" mbr-if=\"showCardsButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a href=\"index.html#features13-r\" class=\"btn btn-primary\">SEDC</a></div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"card px-3 py-4 col-12 col-md-6 col-lg-4\" mbr-class=\"{'col-xl-3': showTitle || showSubtitle || showButtons}\" mbr-if=\"cardsAmount > 1\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <img src=\"@PROJECT_PATH@/assets/images/mbr-1160x773.jpg\" alt=\"Mobirise\" title>\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardsButtons\">\n                        <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .card-btn\">Eos<br>Eos Positioning Systems, Inc., designs and manufactures the world’s premier, high-accuracy GPS / GNSS receivers for the Bring Your Own Device (BYOD) market. This is known as the Arrow Series™. The Eos team offers extensive support for connecting your Bluetooth® submeter, subfoot and RTK GPS / GNSS receivers to any iOS, Android, Windows, and Windows Mobile device. The free Eos software utilities, such as the Eos Tools Pro app, and SDK support for all mobile device operating systems allows users to smoothly integrate the Eos GNSS Arrow receivers into their mobile GIS workflow.</p><div><br></div><p></p>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn card-btn align-center\" mbr-if=\"showCardsButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a href=\"index.html#features13-r\" class=\"btn btn-primary\">Eos</a></div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"card px-3 py-4 col-12 col-md-6 col-lg-4\" mbr-class=\"{'col-xl-3': showTitle || showSubtitle || showButtons}\" mbr-if=\"cardsAmount > 2\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <img src=\"@PROJECT_PATH@/assets/images/mbr-1160x774.jpg\" alt=\"Mobirise\" title>\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardsButtons\">\n                        <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .card-btn\">ESRI<br>We build ArcGIS, the world’s most powerful mapping and spatial analytics software.<br>We believe The Science of Where can unlock data’s full potential in every organization<br>\n                        </p>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn card-btn align-center\" mbr-if=\"showCardsButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a href=\"index.html#features13-r\" class=\"btn btn-primary\">ESRI</a></div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"card px-3 py-4 col-12 col-md-6 col-lg-4\" mbr-class=\"{'col-xl-3': showTitle || showSubtitle || showButtons}\" mbr-if=\"cardsAmount > 3\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <img src=\"@PROJECT_PATH@/assets/images/futurauc2018-logo-1073x945.png\" alt=\"Mobirise\" title>\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardsButtons\">\n                        <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .card-btn\">Davey Resource Group<br>Davey Resource Group provides a full range of natural resource and utility consulting services to the commercial, residential, municipal and governmental markets. That’s officially what we do. In fact, \"innovations through solutions and expertise\" is our brand promise.<br><br><br></p>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn card-btn align-center\" mbr-if=\"showCardsButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a href=\"index.html#features13-r\" class=\"btn btn-primary\">\n                                DAVEY RESOURCE</a></div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"card px-3 py-4 col-12 col-md-6 col-lg-4\" mbr-class=\"{'col-xl-3': showTitle || showSubtitle || showButtons}\" mbr-if=\"cardsAmount > 4\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <img src=\"@PROJECT_PATH@/assets/images/mbr-854x569.jpg\" alt=\"Mobirise\" title>\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardsButtons\">\n                        <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .card-btn\">\n                            Chapel Mapping takes pride in being the GPS collection firm with the most complete and accurate collection process in the utility sector.</p><div><br><br><br><br></div><p></p>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn card-btn align-center\" mbr-if=\"showCardsButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a href=\"index.html#features13-r\" class=\"btn btn-primary\">\n                                CHAPEL MAPPING</a></div>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"card px-3 py-4 col-12 col-md-6 col-lg-4\" mbr-class=\"{'col-xl-3': showTitle || showSubtitle || showButtons}\" mbr-if=\"cardsAmount > 5\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <img src=\"../_images/img/06.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardsButtons\">\n                        <p class=\"mbr-text mbr-fonts-style align-center\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text, .card-btn\">\n                            Something about someone.<br><br><br><br><br><br><br><br>\n                        </p>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn card-btn align-center\" mbr-if=\"showCardsButtons\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\"><a href=\"index.html#features13-r\" class=\"btn btn-primary\">\n                                SOMEONE</a></div>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
-          "_cid": "qQfUtA2cHy",
-          "_anchor": "features13-r",
+          "_name": "features5",
+          "_customHTML": "<section class=\"features5 popup-btn-cards\" group=\"Animated Features\" data-bg-video=\"{{bg.type == 'video' && bg.value.url}}\" mbr-class=\"{'mbr-parallax-background': bg.parallax}\" plugins=\"mbr-popup-btns\">\n\n    <mbr-parameters>\n    <!-- Block parameters controls (Blue \"Gear\" panel) -->\n        <input type=\"range\" inline title=\"Top\" name=\"paddingTop\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"range\" inline title=\"Bottom\" name=\"paddingBottom\" min=\"0\" max=\"9\" step=\"1\" value=\"6\">\n        <input type=\"checkbox\" title=\"Show Title\" name=\"showTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Underline\" name=\"showUnderline\" checked condition=\"showTitle\">\n        <input type=\"checkbox\" title=\"Show Subtitle\" name=\"showSubtitle\" checked>\n        <input type=\"checkbox\" title=\"Show Card Title\" name=\"showCardTitle\" checked>\n        <input type=\"checkbox\" title=\"Show Text\" name=\"showText\" checked>\n        <input type=\"color\" title=\"Card Background\" name=\"bgCard\" value=\"#ffffff\">\n        <input type=\"color\" title=\"Card Overlay Color\" name=\"cardOverlayColor1\" value=\"#224687\">\n        <input type=\"checkbox\" title=\"Card Overlay Gradient\" name=\"cardGradient\" checked>\n        <input type=\"color\" title=\"Card Overlay Color 2\" name=\"cardOverlayColor2\" value=\"#ffffff\" condition=\"cardGradient\">\n        <input type=\"range\" inline title=\"Card Overlay Opacity\" name=\"cardOverlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.8\">\n        <select title=\"Cards\" name=\"cardsAmount\">\n            <option value=\"1\">1</option>\n            <option value=\"2\">2</option>\n            <option value=\"3\">3</option>\n            <option value=\"4\" selected>4</option>\n            <option value=\"5\">5</option>\n            <option value=\"6\">6</option>\n            <option value=\"7\">7</option>\n            <option value=\"8\">8</option>\n        </select>\n        <fieldset type=\"background\" name=\"bg\" parallax>\n            <input type=\"image\" title=\"Background Image\" value=\"@PROJECT_PATH@/assets/images/logomark-white-761x761.png\" parallax selected>\n            <input type=\"color\" title=\"Background Color\" value=\"#ffffff\">\n            <input type=\"video\" title=\"Background Video\" value=\"https://www.youtube.com/watch?v=kI1YE_qenSU\">\n        </fieldset>\n        <input type=\"checkbox\" title=\"Overlay\" name=\"overlay\" condition=\"bg.type !== 'color'\" checked>\n        <input type=\"color\" title=\"Overlay Color\" name=\"overlayColor\" value=\"#ffffff\" condition=\"overlay && bg.type !== 'color'\">\n        <input type=\"range\" inline title=\"Opacity\" name=\"overlayOpacity\" min=\"0\" max=\"1\" step=\"0.1\" value=\"0.5\" condition=\"overlay && bg.type !== 'color'\">\n    <!-- End block parameters -->\n    </mbr-parameters>\n\n    <div class=\"mbr-overlay\" mbr-if=\"overlay && bg.type!== 'color'\" mbr-style=\"{'opacity': overlayOpacity, 'background-color': overlayColor}\">\n    </div>\n    <div class=\"container-fluid\">\n        <h2 class=\"mbr-section-title align-center mbr-fonts-style\" mbr-theme-style=\"display-2\" mbr-if=\"showTitle\" data-app-selector=\".mbr-section-title,.underline\">\n            Futura18 Sponsors</h2>\n        <div class=\"underline align-center\" mbr-if=\"showUnderline && showTitle\">\n            <div class=\"line\"></div>\n        </div>\n        <h3 class=\"mbr-section-subtitle display-5 align-center mbr-fonts-style mbr-light pt-3 pb-5\" mbr-theme-style=\"display-5\" mbr-if=\"showSubtitle\" data-app-selector=\".mbr-section-subtitle\">\n            Don't forget to checkout our sponsors this year in the Vendor Hall.&nbsp;<br>They might just have something you need.</h3>\n        <div class=\"row justify-content-center pt-5 align-items-start\" mbr-cards=\"bootstrap\" mbr-class=\"{'pt-5':!showSubtitle}\">\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\">\n                <div class=\"card-wrapper \">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            \n                        </div>\n                        <img src=\"../_images/img/01.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            SEDC</h4>\n                        <p class=\"mbr-text mbr-fonts-style align-left\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">For nearly four decades, SEDC has been a leader in the development of innovative utility software solutions. We’re committed to providing our users with CIS/Billing, Accounting, Engineering and Operations applications configured to meet their needs. Our all-in-one solutions are cost-effective and customizable – and backed by our team of expert designers and dedicated support staff that is second to none in terms of developing cutting-edge technologies and building lasting relationships.</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\" mbr-if=\"cardsAmount > 1\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            \n                        </div>\n                        <img src=\"../_images/img/02.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            Eos</h4>\n                        <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                           Eos Positioning Systems, Inc., designs and manufactures the world’s premier, high-accuracy GPS / GNSS receivers for the Bring Your Own Device (BYOD) market. This is known as the Arrow Series™. The Eos team offers extensive support for connecting your Bluetooth® submeter, subfoot and RTK GPS / GNSS receivers to any iOS, Android, Windows, and Windows Mobile device. The free Eos software utilities, such as the Eos Tools Pro app, and SDK support for all mobile device operating systems allows users to smoothly integrate the Eos GNSS Arrow receivers into their mobile GIS workflow.\n                        </p>\n                    </div>\n                </div>\n            </div>\n\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\" mbr-if=\"cardsAmount > 2\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            \n                        </div>\n                        <img src=\"../_images/img/03.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            ESRI</h4>\n                        <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">We build ArcGIS, the world’s most powerful mapping and spatial analytics software.\n<br>We believe The Science of Where can unlock data’s full potential in every organization</p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\" mbr-if=\"cardsAmount > 3\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            \n                        </div>\n                        <img src=\"../_images/img/04.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            Davey Resource Group</h4>\n                        <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                            Davey Resource Group provides a full range of natural resource and utility consulting services to the commercial, residential, municipal and governmental markets. That’s officially what we do. In fact, \"innovations through solutions and expertise\" is our brand promise.\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\" mbr-if=\"cardsAmount > 4\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            <a href=\"https://mobirise.com\" class=\"btn btn-white\">\n                                View All\n                            </a>\n                        </div>\n                        <img src=\"../_images/img/05.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            Shoes\n                        </h4>\n                        <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\" mbr-if=\"cardsAmount > 5\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            <a href=\"https://mobirise.com\" class=\"btn btn-white\">\n                                View All\n                            </a>\n                        </div>\n                        <img src=\"../_images/img/06.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            Accessories\n                        </h4>\n                        <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\" mbr-if=\"cardsAmount > 6\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            <a href=\"https://mobirise.com\" class=\"btn btn-white\">\n                                View All\n                            </a>\n                        </div>\n                        <img src=\"../_images/img/07.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            Hats\n                        </h4>\n                        <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                        </p>\n                    </div>\n                </div>\n            </div>\n            <div class=\"card p-3 col-12 col-md-6 col-lg-4 col-xl-3\" mbr-if=\"cardsAmount > 7\">\n                <div class=\"card-wrapper\">\n                    <div class=\"card-img\">\n                        <div class=\"mbr-overlay\"></div>\n                        <div mbr-buttons mbr-theme-style=\"display-4\" class=\"mbr-section-btn text-center\" data-toolbar=\"-mbrBtnMove,-mbrBtnAdd\">\n                            <a href=\"https://mobirise.com\" class=\"btn btn-white\">\n                                View All\n                            </a>\n                        </div>\n                        <img src=\"../_images/img/08.jpg\" alt=\"Mobirise\">\n                    </div>\n                    <div class=\"card-box\" mbr-if=\"showText || showCardTitle\">\n                        <h4 class=\"card-title mbr-fonts-style align-center\" mbr-theme-style=\"display-5\" mbr-if=\"showCardTitle\" data-app-selector=\".card-title\">\n                            Jeans\n                        </h4>\n                        <p class=\"mbr-text mbr-fonts-style\" mbr-theme-style=\"display-7\" mbr-if=\"showText\" data-app-selector=\".mbr-text\">\n                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.\n                        </p>\n                    </div>\n                </div>\n            </div>\n        </div>\n    </div>\n</section>",
+          "_cid": "qRFkh8n4U6",
+          "_anchor": "features5-1i",
           "_PHPplaceholders": [],
           "_JSplaceholders": [],
           "_protectedParams": [],

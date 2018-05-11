@@ -1974,72 +1974,36 @@ body {
 .cid-qQfFZrAMHF .mbr-section-subtitle B {
   color: #000000;
 }
-.cid-qQfJ9WxBTJ {
-  padding-top: 0px;
-  padding-bottom: 0px;
-  background-color: #ffffff;
+.cid-qRLNcJfAl2 {
+  padding-top: 45px;
+  padding-bottom: 30px;
+  background-image: url("../../../assets/images/img-315-2000x1500.jpg");
 }
-.cid-qQfJ9WxBTJ p {
-  color: #767676;
-}
-.cid-qQfJ9WxBTJ .img-wrap {
-  width: 100% !important;
-  height: 100% !important;
-}
-.cid-qQfJ9WxBTJ .main {
-  flex-direction: row-reverse;
-}
-.cid-qQfJ9WxBTJ .row-element,
-.cid-qQfJ9WxBTJ .image-element {
-  padding: 0;
-}
-.cid-qQfJ9WxBTJ .image-element {
-  display: flex;
-  justify-content: center;
-}
-.cid-qQfJ9WxBTJ .image-element img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-}
-.cid-qQfJ9WxBTJ .underline {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-.cid-qQfJ9WxBTJ .underline .line {
-  width: 5rem;
-  height: 3px;
-  background: linear-gradient(90deg, #224687, #cccccc);
+.cid-qRLNcJfAl2 .slider-text-two {
+  background: rgba(255, 255, 255, 0.8) none repeat scroll 0 0;
   display: inline-block;
+  outline: 1px solid rgba(0, 0, 0, 0.2);
+  outline-offset: -15px;
+  padding: 65px 50px;
+  position: relative;
+  text-align: center;
 }
-@media (min-width: 1500px) {
-  .cid-qQfJ9WxBTJ .text-content {
-    padding: 5rem;
-  }
+.cid-qRLNcJfAl2 .mbr-section-title {
+  color: #232323;
 }
-@media (min-width: 768px) and (max-width: 1499px) {
-  .cid-qQfJ9WxBTJ .text-content {
-    padding: 3rem;
-  }
+.cid-qRLNcJfAl2 .mbr-section-title span {
+  color: #ffbc00;
 }
-@media (max-width: 767px) {
-  .cid-qQfJ9WxBTJ .text-content {
-    padding: 2rem 1rem;
-  }
-  .cid-qQfJ9WxBTJ .underline .line {
-    height: 2px;
-  }
-  .cid-qQfJ9WxBTJ .mbr-title,
-  .cid-qQfJ9WxBTJ .underline,
-  .cid-qQfJ9WxBTJ .mbr-text,
-  .cid-qQfJ9WxBTJ .mbr-section-btn {
-    text-align: center !important;
-  }
+.cid-qRLNcJfAl2 .mbr-text {
+  color: #232323;
+  letter-spacing: 5px;
+  font-weight: 100;
 }
-.cid-qQfJ9WxBTJ .mbr-text,
-.cid-qQfJ9WxBTJ .mbr-section-btn {
-  color: #000000;
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .cid-qRLNcJfAl2 .slider-text-two {
+    outline: 15px solid rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+  }
 }
 .cid-qRLIwAokqk {
   overflow: hidden !important;

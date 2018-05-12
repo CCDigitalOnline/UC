@@ -1940,8 +1940,8 @@ body {
   }
 }
 .cid-qRNcDxpOcb {
-  padding-top: 45px;
-  padding-bottom: 30px;
+  padding-top: 60px;
+  padding-bottom: 60px;
   background-color: #ffffff;
 }
 .cid-qRNcDxpOcb p {
@@ -1998,6 +1998,10 @@ body {
   .cid-qRNcDxpOcb .mbr-section-btn {
     text-align: center !important;
   }
+}
+.cid-qRNcDxpOcb .mbr-text,
+.cid-qRNcDxpOcb .mbr-section-btn {
+  color: #000000;
 }
 .cid-qRLNcJfAl2 {
   padding-top: 45px;

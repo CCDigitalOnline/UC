@@ -1939,69 +1939,52 @@ body {
     padding: .5rem 2rem;
   }
 }
-.cid-qRNcDxpOcb {
-  padding-top: 60px;
-  padding-bottom: 60px;
-  background-color: #ffffff;
+.cid-qS2dQnu7Zx {
+  padding-top: 30px;
+  padding-bottom: 0px;
+  background-color: #efefef;
 }
-.cid-qRNcDxpOcb p {
-  color: #767676;
+.cid-qS2dQnu7Zx .container-fluid {
+  padding: 0 3rem;
 }
-.cid-qRNcDxpOcb .img-wrap {
-  width: 100% !important;
-  height: 100% !important;
+.cid-qS2dQnu7Zx .media-container-column {
+  padding: 0 2rem;
 }
-.cid-qRNcDxpOcb .row-element,
-.cid-qRNcDxpOcb .image-element {
-  padding: 0;
+.cid-qS2dQnu7Zx .mbr-section-title {
+  display: inline-block;
+  position: relative;
 }
-.cid-qRNcDxpOcb .image-element {
+@media (max-width: 767px) {
+  .cid-qS2dQnu7Zx .container-fluid {
+    padding: 0 1rem;
+  }
+}
+.cid-qS2bpzWOEN {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  background-color: #efefef;
+}
+.cid-qS2bpzWOEN .mbr-figure {
+  margin: 0 auto;
+  width: 100%;
   display: flex;
   justify-content: center;
 }
-.cid-qRNcDxpOcb .image-element img {
-  width: 100%;
+.cid-qS2bpzWOEN .mbr-figure img {
   height: 100%;
-  object-fit: cover;
-  object-position: center center;
+  margin: 0 auto;
 }
-.cid-qRNcDxpOcb .underline {
-  padding-top: .5rem;
-  padding-bottom: .5rem;
-}
-.cid-qRNcDxpOcb .underline .line {
-  width: 5rem;
-  height: 3px;
-  background: linear-gradient(90deg, #224687, #cccccc);
-  display: inline-block;
-}
-@media (min-width: 1500px) {
-  .cid-qRNcDxpOcb .text-content {
-    padding: 5rem;
+@media (max-width: 991px) {
+  .cid-qS2bpzWOEN .mbr-figure img {
+    width: 100% !important;
   }
 }
-@media (min-width: 768px) and (max-width: 1499px) {
-  .cid-qRNcDxpOcb .text-content {
-    padding: 3rem;
-  }
+.cid-qS2bpzWOEN H1 {
+  color: #ffffff;
 }
-@media (max-width: 767px) {
-  .cid-qRNcDxpOcb .text-content {
-    padding: 2rem 1rem;
-  }
-  .cid-qRNcDxpOcb .underline .line {
-    height: 2px;
-  }
-  .cid-qRNcDxpOcb .mbr-title,
-  .cid-qRNcDxpOcb .underline,
-  .cid-qRNcDxpOcb .mbr-text,
-  .cid-qRNcDxpOcb .mbr-section-btn {
-    text-align: center !important;
-  }
-}
-.cid-qRNcDxpOcb .mbr-text,
-.cid-qRNcDxpOcb .mbr-section-btn {
-  color: #000000;
+.cid-qS2bpzWOEN .mbr-text,
+.cid-qS2bpzWOEN .mbr-section-btn {
+  color: #ffffff;
 }
 .cid-qRLNcJfAl2 {
   padding-top: 45px;
@@ -2500,8 +2483,8 @@ body {
   }
 }
 .cid-qRN5grU7yQ {
-  padding-top: 90px;
-  padding-bottom: 120px;
+  padding-top: 75px;
+  padding-bottom: 75px;
   background-image: url("../../../assets/images/cut-1-950x534.jpg");
 }
 .cid-qRN5grU7yQ p {

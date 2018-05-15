@@ -3329,6 +3329,9 @@ body {
   padding: 1.2rem 1.6rem;
   vertical-align: middle;
 }
+.cid-qQUmatAvNX table.table {
+  background: #ffffff;
+}
 .cid-qQUmatAvNX .dataTables_filter {
   text-align: right;
   margin-bottom: .5rem;

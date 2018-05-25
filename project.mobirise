@@ -1,7 +1,7 @@
 {
   "settings": {
     "name": "Futura18",
-    "currentPage": "index.html",
+    "currentPage": "page4.html",
     "theme": {
       "name": "storem4",
       "title": "StoreM4",
@@ -4407,7 +4407,7 @@
               "background-image": "url(@bg-value)"
             },
             ".mbr-text": {
-              "color": "#ffffff"
+              "color": "#224687"
             },
             "h4": {
               "text-align": "center"
@@ -4483,7 +4483,9 @@
           "_global": false,
           "_once": false,
           "_params": {},
-          "_anchor": "features7-2s"
+          "_anchor": "features7-2s",
+          "_PHPplaceholders": [],
+          "_JSplaceholders": []
         }
       ]
     }

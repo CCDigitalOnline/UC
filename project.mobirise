@@ -3851,7 +3851,7 @@
             "slides": [
               {
                 "image": "@PROJECT_PATH@/assets/images/atlas-close-up-dark-592753-2000x976.jpg",
-                "active": false,
+                "active": true,
                 "showButtons": false,
                 "showText": true,
                 "showTitle": false,
@@ -3902,7 +3902,7 @@
               },
               {
                 "image": "@PROJECT_PATH@/assets/images/apple-ipad-iphone-6-9038-2000x1333.jpg",
-                "active": true,
+                "active": false,
                 "showButtons": false,
                 "showText": true,
                 "showTitle": false,
